@@ -1,164 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>Demo for paper: ParrotTTS: Text-to-speech synthesis by exploiting self-supervised representations</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#712cf9">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        .text-desc {
+
+        }
+    </style>
+
 </head>
-<body>
-<h1 id="Demo for paper" style="font-size:50px"><center> ParrotTTS: Text-to-speech synthesis by exploiting self-supervised representations </center></h1>
-<h2 id="abstract">Abstract:</h2>
-<div style="text-align: justify;font-size: 20px">Text-to-speech (TTS) systems are modelled as mel-synthesizers followed by speech-vocoders since the era of statistical TTS that is carried forward into neural designs. We propose an alternative approach to TTS modelling referred to as ParrotTTS borrowing from self-supervised learning (SSL) methods. ParrotTTS takes a two-step approach by initially training a speech-to-speech model on unlabelled data that is abundantly available, followed by a text-to-embedding model that leverages speech with aligned transcriptions to extend it to TTS. ParrotTTS achieves competitive mean opinion scores on naturalness compared to traditional TTS models but significantly improves over the latter's data efficiency of transcribed pairs and speaker adaptation without transcriptions.
-This further paves the path to training TTS models on generically trained SSL speech models.</div>
-</div>
-<p><br /></p>
-<h4 style="font-size:20px">1. Proposed ParrotTTS </h4>
-<center><p><img src="demo/tts_tth.png" alt="arch" /></p> 
-	<td align="center"><span>(a) Traditional TTS and (b) ParrotTTS</span></td>
-</center>
-<h4 style="font-size:20px">2. Demo of Single speaker TTS </h4>
-<blockquote>
-<table border=1>
-<div style="text-align: justify;font-size: 20px">A single speaker TTS trained on LJSpeech dataset.</div>
-<tr>
-<td align="center"><span>Text</span></td>
-<td align="center"><span>SS-Tacotron2</span></td>
-<td align="center"><span>SS-FastSpeech2</span></td>
-<td align="center"><span>SS-FastSpeech2-SupASR<span></td>
-<td align="center"><span>SS-Tacotron2-UnsupASR<span></td>
-<td align="center"><span>ParrotTTS: AR-TTE<span></td>
-<td align="center"><span>ParrotTTS: NAR-TTE<span></td>
-<td align="center"><span>ParrotTTS: NAR-TTE (Half transcripts)<span></td>
 
-</tr>
+<body class="text-bg-light">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-<tr>
-<td width=1%;white-space: nowrap>Under the conditions referred to in the previous chapter.</td>
-<td><audio controls><source src="demo/SS/Tacotron/LJ002-0002.wav"></audio></td>
-<td><audio controls><source src="demo/SS/FS2/LJ002-0002.wav"></audio></td>
-<td><audio controls><source src="demo/SS/Asr/LJ002-0002.wav"></audio></td>
-<td><audio controls><source src="demo/SS/UnAsr/LJ002-0002.wav"></audio></td>
-<td><audio controls><source src="demo/SS/AR/LJ002-0002.wav"></audio></td>
-<td><audio controls><source src="demo/SS/NAR/LJ002-0002.wav"></audio></td>
-<td><audio controls><source src="demo/SS/HalfNAR/LJ002-0002.wav"></audio></td>	
-</tr>
+    <div class="d-block p-3">
+        <div class="row p-5">
+            <h1 class="display-3 text-lg-center">
+                UMM-TTS: Unified Multilingual Multispeaker Text to Speech Synthesis in Low Resource Setting
+            </h1>
+        </div>
+        <div class="row p-2">
 
-<td>And therefore approximately one point six seconds after the president was shot in the head.</td>
-<td><audio controls><source src="demo/SS/Tacotron/LJ049-0048.wav"></audio></td>
-<td><audio controls><source src="demo/SS/FS2/LJ049-0048.wav"></audio></td>
-<td><audio controls><source src="demo/SS/Asr/LJ049-0048.wav"></audio></td>
-<td><audio controls><source src="demo/SS/UnAsr/LJ049-0048.wav"></audio></td>
-<td><audio controls><source src="demo/SS/AR/LJ049-0048.wav"></audio></td>
-<td><audio controls><source src="demo/SS/NAR/LJ049-0048.wav"></audio></td>
-<td><audio controls><source src="demo/SS/HalfNAR/LJ049-0048.wav"></audio></td>	                                    
-</tr>
+        </div>
+        <div class="row">
+            <h3 class="">Abstract: </h4>
+        </div>
+        <div class="row p-1">
 
-<tr>
-<td>Modern printers understand this, but it is only practiced in the very best establishments.</td>
-<td><audio controls><source src="demo/SS/Tacotron/LJ001-0136.wav"></audio></td>
-<td><audio controls><source src="demo/SS/FS2/LJ001-0136.wav"></audio></td>
-<td><audio controls><source src="demo/SS/Asr/LJ001-0136.wav"></audio></td>
-<td><audio controls><source src="demo/SS/UnAsr/LJ001-0136.wav"></audio></td>
-<td><audio controls><source src="demo/SS/AR/LJ001-0136.wav"></audio></td>
-<td><audio controls><source src="demo/SS/NAR/LJ001-0136.wav"></audio></td>
-<td><audio controls><source src="demo/SS/HalfNAR/LJ001-0136.wav"></audio></td>	
+        </div>
+        <div class="row">
+            <p class="fs-5">
+                We present UMM-TTS, a unified multilingual, multispeaker text-to-speech (TTS) synthesis model that can produce high-quality speech. Benefiting from a modularized training paradigm exploiting self-supervised speech representations. UMM-TTS  adapts to a new language with minimal supervised data and generalizes to languages not seen while training the self-supervised backbone. Moreover, without training on any bilingual or parallel examples, UMM-TTS can transfer voices across languages while preserving the speaker-specific characteristics, e.g., synthesizing fluent Hindi speech using a French speaker’s voice and accent. We present extensive results on six languages in terms of speech naturalness and speaker similarity in parallel and cross-lingual synthesis. The proposed model outperforms the state-of-the-art Fastspeech2 backbone, using only a small fraction of supervised training data.
+            </p>
+        </div>
 
+        <div class="row p-2"></div>
+        
+        <div class="row">
+            <h3> Proposed Architecture</h4>
+        </div>
+        <div class="row p-2"></div>
+        <div class="row">
+            <figure class="figure text-center">
+                <img src="resources/UMMTTS.png" alt="..." class="figure-img">
+                <figcaption class="figure-caption text-center">Insert caption if required</figcaption>
+            </figure>
+        </div>
+    </div>
 
-</tr>
+    <div class="d-block p-3">
+        <div class="row">
+            <h3>Samples</h3>
+        </div>
+        <div class="row">
+            <p class="fs-5"> Here are some exciting examples of multilingual & multispeaker synthesis using our method. Samples of competing models mentioned in the paper are also provided here for comparison. </p>
+        </div>
+        
+        <!-- TODO: Insert Carousel to show the exciting samples -->
+        <div class="row">
+            <div id="sample-highlights" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
 
-<tr>
-<td>And investigative capabilities of the agencies now operating in this field but will continue.</td>
-<td><audio controls><source src="demo/SS/Tacotron/LJ050-0123.wav"></audio></td>
-<td><audio controls><source src="demo/SS/FS2/LJ050-0123.wav"></audio></td>
-<td><audio controls><source src="demo/SS/Asr/LJ050-0123.wav"></audio></td>
-<td><audio controls><source src="demo/SS/UnAsr/LJ050-0123.wav"></audio></td>
-<td><audio controls><source src="demo/SS/AR/LJ050-0123.wav"></audio></td>
-<td><audio controls><source src="demo/SS/NAR/LJ050-0123.wav"></audio></td>
-<td><audio controls><source src="demo/SS/HalfNAR/LJ050-0123.wav"></audio></td>	
-</tr>
-<tr>
-<td>The department hopes to design a practical system which will fully meet the needs of the protective research section of the secret service.</td>
-<td><audio controls><source src="demo/SS/Tacotron/LJ050-0158.wav"></audio></td>
-<td><audio controls><source src="demo/SS/FS2/LJ050-0158.wav"></audio></td>
-<td><audio controls><source src="demo/SS/Asr/LJ050-0158.wav"></audio></td>
-<td><audio controls><source src="demo/SS/UnAsr/LJ050-0158.wav"></audio></td>
-<td><audio controls><source src="demo/SS/AR/LJ050-0158.wav"></audio></td>
-<td><audio controls><source src="demo/SS/NAR/LJ050-0158.wav"></audio></td>
-<td><audio controls><source src="demo/SS/HalfNAR/LJ050-0158.wav"></audio></td>		                                    
-</tr>
-<tr>
-<td>A formal and thorough description of the responsibilities of the advance agent is now in preparation by the service.</td>
-<td><audio controls><source src="demo/SS/Tacotron/LJ050-0022.wav"></audio></td>
-<td><audio controls><source src="demo/SS/FS2/LJ050-0022.wav"></audio></td>
-<td><audio controls><source src="demo/SS/Asr/LJ050-0022.wav"></audio></td>
-<td><audio controls><source src="demo/SS/UnAsr/LJ050-0022.wav"></audio></td>
-<td><audio controls><source src="demo/SS/AR/LJ050-0022.wav"></audio></td>
-<td><audio controls><source src="demo/SS/NAR/LJ050-0022.wav"></audio></td>
-<td><audio controls><source src="demo/SS/HalfNAR/LJ050-0022.wav"></audio></td>	                                    
-</tr>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item-active">
 
-</table>
-<br/>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</blockquote>
-<h4 style="font-size:20px">3. Demo of Multi-speaker TTS </h4>
-<blockquote>
-<table border=1>
-<div style="text-align: justify;font-size: 20px"> The samples are generated from various models of Multi-speaker TTS on VCTK speakers.  </div>
-<tr>
-<td align="center"><span>Text</span></td>
+        <div class="row d-flex table-responsive">
+            <table class="table table-striped table-bordered m-3">
+                <caption class="text-center fs-4">Comparing samples for seen speakers</caption>
+                <thead>
+                    <tr class="flex-row">
+                        <th class="col-3 text-center">Source Text</th>
+                        <th class="col-1 text-center">Language</th>
+                        <th class="col-2 text-center">Ground Truth</th>
+                        <th class="col-2 text-center">Fastspeech 2</th>
+                        <th class="col-2 text-center">CTE-Model</th>
+                        <th class="col-2 text-center">PTE-Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="flex-row">
+                        <td>The uncle claimed her. The husband resisted.</td>
+                        <td>
+                            English
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/gt/en_ljspeech_LJ011_0202.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/fs2/en_ljspeech_LJ011_0202.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/char/en_ljspeech_LJ011_0202.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/phn/en_ljspeech_LJ011_0202.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>
+                            When Oswald was arrested in the Texas Theatre, he was wearing a brown sport shirt with a hole in the right sleeve at the elbow.
+                        </td>
+                        <td>
+                            English
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/gt/en_ljspeech_LJ036_0054.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/fs2/en_ljspeech_LJ036_0054.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/char/en_ljspeech_LJ036_0054.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/phn/en_ljspeech_LJ036_0054.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>
+                            शिष्य सदा गुरु के पदचिह्नों पर चलता है, लेकिन उसका उद्देश्य केवल ज्ञान प्राप्त करना ही होता है।
+                        </td>
+                        <td>
+                            Hindi
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/gt/hi_m_education_02562.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/fs2/hi_m_education_02562.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/char/hi_m_education_02562.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/phn/hi_m_education_02562.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>
+                            पाँचवीं पंचवर्षीय योजना में इसके कार्यक्षेत्र को और विस्तृत किया गया|
+                        </td>
+                        <td>
+                            Hindi
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/gt/hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/fs2/hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/char/hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/phn/hi_m_books_00150.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>
+                            --En efecto--continuó el mentiroso--, y si aquel hombre eminente defendió con tanto calor la paz con los republicanos,
+                        </td>
+                        <td>
+                            Spanish
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/gt/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/fs2/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/char/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/phn/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>
+                            Entonces me dijeron que habiendo salido otra balandra a reconocer los restos del Rayo, y los de un navío francés que corrió igual suerte, me encontraron junto a Marcial, y pudieron salvarme la vida.
+                        </td>
+                        <td>
+                            Spanish
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/gt/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/fs2/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/char/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/phn/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>
+                            Je leur ai donc probablement fait manger non pas du bœuf, mais du cheval.
+                        </td>
+                        <td>
+                            French
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/gt/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/fs2/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/char/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/phn/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>
+                            n bon impôt, c’est un impôt stable, identifié, connu.
+                        </td>
+                        <td>
+                            French
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/gt/french_siwis_neut_parl_s01_0520.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/fs2/french_siwis_neut_parl_s01_0520.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/char/french_siwis_neut_parl_s01_0520.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/phn/french_siwis_neut_parl_s01_0520.wav"></audio>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-<td align="center"><span>GT-Mel+Vocoder</span></td>
-<td align="center"><span>MS-FastSpeech2</span></td>
-<td align="center"><span>MS-FastSpeech2-SupASR<span></td>
-<td align="center"><span>VC-FastSpeech2</span></td>
-<td align="center"><span>ParrotTTS: NAR-TTE<span></td>
-</tr>
-<tr>
-<td width=1%;white-space: nowrap>Until recently she worked as a recruitment consultant in London.</td>
-<td><audio controls><source src="demo/MS/orig/p233_067_mic2.wav"></audio></td>
-<td><audio controls><source src="demo/MS/FS2/p233_067.wav"></audio></td>
-<td><audio controls><source src="demo/MS/asr/p233_067.wav"></audio></td>
-<td><audio controls><source src="demo/MS/vc/p233_067.wav"></audio></td>
-<td><audio controls><source src="demo/MS/tth/p233_067.wav"></audio></td>
-</tr>
-<tr>
-<td>The advisors had some discussions but no conclusion was reached.</td>
-<td><audio controls><source src="demo/MS/orig/p286_339_mic2_gt.wav"></audio></td>
-<td><audio controls><source src="demo/MS/FS2/p286_339.wav"></audio></td>
-<td><audio controls><source src="demo/MS/asr/p286_339.wav"></audio></td>
-<td><audio controls><source src="demo/MS/vc/p286_339.wav"></audio></td>
-<td><audio controls><source src="demo/MS/tth/p286_339.wav"></audio></td>
-</tr>
-<tr>
-<td>I tried to be cautious but its hard in that role.</td>
-<td><audio controls><source src="demo/MS/orig/p283_407_mic2_gt.wav"></audio></td>
-<td><audio controls><source src="demo/MS/FS2/p283_407.wav"></audio></td>
-<td><audio controls><source src="demo/MS/asr/p283_407.wav"></audio></td>
-<td><audio controls><source src="demo/MS/vc/p283_407.wav"></audio></td>
-<td><audio controls><source src="demo/MS/tth/p283_407.wav"></audio></td>
-</tr>
-<tr>
-<td>The key player in this matter is now the prime minister.</td>
-<td><audio controls><source src="demo/MS/orig/p263_363_mic2_gt.wav"></audio></td>
-<td><audio controls><source src="demo/MS/FS2/p263_363.wav"></audio></td>
-<td><audio controls><source src="demo/MS/asr/p263_363.wav"></audio></td>
-<td><audio controls><source src="demo/MS/vc/p263_363.wav"></audio></td>
-<td><audio controls><source src="demo/MS/tth/p263_363.wav"></audio></td>
-</tr>
-<tr>
-<td>No one in downing street can speak the language of the unions.</td>
-<td><audio controls><source src="demo/MS/orig/p246_138_mic2_gt.wav"></audio></td>
-<td><audio controls><source src="demo/MS/FS2/p246_138.wav"></audio></td>
-<td><audio controls><source src="demo/MS/asr/p246_138.wav"></audio></td>
-<td><audio controls><source src="demo/MS/vc/p246_138.wav"></audio></td>
-<td><audio controls><source src="demo/MS/tth/p246_138.wav"></audio></td>
-</tr>
-</table>
-<br/>
-</blockquote>
-<
-<br/>
-</blockquote>
+        <div class="row d-flex table-responsive">
+            <table class="table table-striped table-bordered m-3">
+                <caption class="text-center fs-4">Comparing samples for unseen speakers</caption>
+                <thead>
+                    <tr class="flex-row">
+                        <th class="col-3 text-center">Source Text</th>
+                        <th class="col-1 text-center">Language</th>
+                        <th class="col-2 text-center">Ground Truth</th>
+                        <th class="col-2 text-center">Fastspeech 2</th>
+                        <th class="col-2 text-center">CTE-Model</th>
+                        <th class="col-2 text-center">PTE-Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="flex-row">
+                        <td>The uncle claimed her. The husband resisted.</td>
+                        <td>
+                            English
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/gt/en_ljspeech_LJ011_0202.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/fs2/en_ljspeech_LJ011_0202.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/char/en_ljspeech_LJ011_0202.wav"></audio>
+                        </td>
+                        <td>
+                            <audio controls src="resources/seen/phn/en_ljspeech_LJ011_0202.wav"></audio>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
+</body>
 
-
+</html>
