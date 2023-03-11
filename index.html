@@ -10,14 +10,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <style>
-        .text-desc {
-
-        }
+        
     </style>
 
 </head>
 
-<body class="text-bg-light">
+<body class="">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
     <div class="d-block p-3">
@@ -57,14 +55,10 @@
 
     <div class="d-block p-3">
         <div class="row">
-            <h3>Samples</h3>
+            <h3>Comparing samples for cross-lingual speech synthesis</h3>
         </div>
-        <div class="row">
-            <p class="fs-5"> Here are some exciting examples of multilingual & multispeaker synthesis using our method. Samples of competing models mentioned in the paper are also provided here for comparison. </p>
-        </div>
-        
         <!-- TODO: Insert Carousel to show the exciting samples -->
-        <div class="row">
+        <!-- <div class="row">
             <div id="sample-highlights" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
 
@@ -75,313 +69,180 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="row d-flex table-responsive">
-            <table class="table table-striped table-bordered m-3">
-                <caption class="text-center fs-4">Comparing samples for seen speakers</caption>
+        <div class="row d-flex table-responsive overflow-hidden">
+            <table class="table table-bordered m-3">
+                <!-- <h5 class="text-center fs-4">Comparing samples for cross-lingual speech synthesis</h5> -->
+                <!-- <caption class="text-center fs-4">Comparing samples for cross-lingual speech synthesis</caption> -->
                 <thead>
                     <tr class="flex-row">
-                        <th class="col-3 text-center">Source Text</th>
-                        <th class="col-1 text-center">Language</th>
-                        <th class="col-2 text-center">Ground Truth</th>
-                        <th class="col-2 text-center">Fastspeech 2</th>
-                        <th class="col-2 text-center">CTE-Model</th>
-                        <th class="col-2 text-center">PTE-Model</th>
+                        <th class="col-2 text-center">Source Text</th>
+                        <th class="col-1 text-center">Text Language</th>
+                        <th class="col-1 text-center">Speaker Language</th>
+                        <th class="col-2 text-center">Reference Voice</th>
+                        <th class="col-2 text-center">Fastspeech2</th>
+                        <th class="col-2 text-center">UMM-TTS</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="flex-row">
-                        <td>The uncle claimed her. The husband resisted.</td>
-                        <td>
-                            English
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/gt/en_ljspeech_LJ011_0202.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/fs2/en_ljspeech_LJ011_0202.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/char/en_ljspeech_LJ011_0202.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/phn/en_ljspeech_LJ011_0202.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>
-                            When Oswald was arrested in the Texas Theatre, he was wearing a brown sport shirt with a hole in the right sleeve at the elbow.
-                        </td>
-                        <td>
-                            English
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/gt/en_ljspeech_LJ036_0054.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/fs2/en_ljspeech_LJ036_0054.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/char/en_ljspeech_LJ036_0054.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/phn/en_ljspeech_LJ036_0054.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>
-                            शिष्य सदा गुरु के पदचिह्नों पर चलता है, लेकिन उसका उद्देश्य केवल ज्ञान प्राप्त करना ही होता है।
-                        </td>
-                        <td>
-                            Hindi
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/gt/hi_m_education_02562.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/fs2/hi_m_education_02562.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/char/hi_m_education_02562.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/phn/hi_m_education_02562.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>
-                            पाँचवीं पंचवर्षीय योजना में इसके कार्यक्षेत्र को और विस्तृत किया गया|
-                        </td>
-                        <td>
-                            Hindi
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/gt/hi_m_books_00150.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/fs2/hi_m_books_00150.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/char/hi_m_books_00150.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/phn/hi_m_books_00150.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>
-                            --En efecto--continuó el mentiroso--, y si aquel hombre eminente defendió con tanto calor la paz con los republicanos,
-                        </td>
-                        <td>
+                        <td>Capítulo Tercero de Bailen.</td>
+                        <td class="text-center">
                             Spanish
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/gt/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
+                        <td class="text-center">
+                            Hindi
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/fs2/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/reference/hi_m_agri_00043.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/char/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/fs2/Hindi_M_sp_tux_bailen_03_perezgaldos_f000001.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/phn/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/phn/Hindi_M_sp_tux_bailen_03_perezgaldos_f000001.wav"></audio>
                         </td>
                     </tr>
                     <tr class="flex-row">
-                        <td>
-                            Entonces me dijeron que habiendo salido otra balandra a reconocer los restos del Rayo, y los de un navío francés que corrió igual suerte, me encontraron junto a Marcial, y pudieron salvarme la vida.
+                        <td>पाँचवीं पंचवर्षीय योजना में इसके कार्यक्षेत्र को और विस्तृत किया गया|</td>
+                        <td class="text-center">
+                            Hindi
                         </td>
-                        <td>
+                        <td class="text-center">
+                            French
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/reference/french_siwis_emph_book_s01_0047.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/fs2/french_siwis_hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/char/french_siwis_hi_m_books_00150.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>पीक कर्ज वितरण कमी असलेल्या बँकांना जिल्हा प्रशासनाने कारणे दाखवा नोटीस बजवाव्यात.</td>
+                        <td class="text-center">
+                            Marathi
+                        </td>
+                        <td class="text-center">
+                            German
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/reference/ge_rebeccabraunertplunkett_das_letzte_marchen_001_f000014.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/fs2/German_rebecca_braunert_plunkett_mr_f_finance_02816.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/char/German_rebecca_braunert_plunkett_mr_f_finance_02816.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>Je leur ai donc probablement fait manger non pas du bœuf, mais du cheval.</td>
+                        <td class="text-center">
+                            German
+                        </td>
+                        <td class="text-center">
+                            French
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/reference/french_siwis_emph_book_s01_0047.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/fs2/German_eva_k_french_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/phn/German_eva_k_french_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>The middle yard, as far as its limits would permit, was appropriated to felons and transports. The wards here were generally very crowded.</td>
+                        <td class="text-center">
+                            English
+                        </td>
+                        <td class="text-center">
+                            Marathi
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/reference/mr_f_agri_00016.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/fs2/Marathi_F_en_ljspeech_LJ003_0082.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/phn/Marathi_F_en_ljspeech_LJ003_0082.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>पाँचवीं पंचवर्षीय योजना में इसके कार्यक्षेत्र को और विस्तृत किया गया|</td>
+                        <td class="text-center">
+                            Hindi
+                        </td>
+                        <td class="text-center">
+                            English
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/reference/en_ljspeech_LJ001_0010.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/fs2/English_ljspeech_hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/char/English_ljspeech_hi_m_books_00150.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>पीक कर्ज वितरण कमी असलेल्या बँकांना जिल्हा प्रशासनाने कारणे दाखवा नोटीस बजवाव्यात.</td>
+                        <td class="text-center">
+                            Marathi
+                        </td>
+                        <td class="text-center">
                             Spanish
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/gt/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/reference/sp_tux_arapiles_01_perezgaldos_f000034.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/fs2/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/fs2/Spain_tux_mr_f_finance_02816.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/char/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/phn/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/char/Spain_tux_mr_f_finance_02816.wav"></audio>
                         </td>
                     </tr>
                     <tr class="flex-row">
-                        <td>
-                            Je leur ai donc probablement fait manger non pas du bœuf, mais du cheval.
-                        </td>
-                        <td>
+                        <td>Je leur ai donc probablement fait manger non pas du bœuf, mais du cheval.</td>
+                        <td class="text-center">
                             French
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/gt/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        <td class="text-center">
+                            Spanish
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/fs2/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/reference/sp_karensavage_angelina_00_delgado_f000032.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/char/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/fs2/Spain_karen_savage_french_siwis_neut_parl_s02_0545.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/seen/phn/french_siwis_neut_parl_s02_0545.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>
-                            n bon impôt, c’est un impôt stable, identifié, connu.
-                        </td>
-                        <td>
-                            French
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/gt/french_siwis_neut_parl_s01_0520.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/fs2/french_siwis_neut_parl_s01_0520.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/char/french_siwis_neut_parl_s01_0520.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/seen/phn/french_siwis_neut_parl_s01_0520.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/CL/phn/Spain_karen_savage_french_siwis_neut_parl_s02_0545.wav"></audio>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="row d-flex table-responsive">
-            <table class="table table-striped table-bordered m-3">
-                <caption class="text-center fs-4">Comparing samples for unseen speakers</caption>
-                <thead>
-                    <tr class="flex-row">
-                        <th class="col-3 text-center">Source Text</th>
-                        <th class="col-1 text-center">Language</th>
-                        <th class="col-2 text-center">Ground Truth</th>
-                        <th class="col-2 text-center">Fastspeech 2</th>
-                        <th class="col-2 text-center">CTE-Model</th>
-                        <th class="col-2 text-center">PTE-Model</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="flex-row">
-                        <td>मेजर ध्यानचंद हे भारतीय हॉकीचे खेळाडू आणि संघनायक होते.</td>
-                        <td>
-                            Marathi
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/gt/mr_f_books_00793.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/fs2/mr_f_books_00793.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/char/mr_f_books_00793.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/phn/mr_f_books_00793.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>भालचंद्र नेमाडे यांची हिंदू ही कादंबरी अपेक्षेपेक्षा फारच कमी खपली. हिंदूच्या एकूण चार कादंबऱ्यांची मालिका निघणार.</td>
-                        <td>
-                            Marathi
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/gt/mr_f_general_00810.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/fs2/mr_f_general_00810.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/char/mr_f_general_00810.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/phn/mr_f_general_00810.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>Aber nicht zu viel, stotterte die kleine Prezel, sonst bleibt ja garnichts mehr von mir übrig, und ich muß doch meine große Prezel suchen!</td>
-                        <td>
-                            German
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/gt/ge_evak_grune_haus_05_f000033.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/fs2/ge_evak_grune_haus_05_f000033.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/char/ge_evak_grune_haus_05_f000033.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/phn/ge_evak_grune_haus_05_f000033.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>Wenn du jetzt nicht dein goldnes Kleid anhättest, müßtest du erfrieren;</td>
-                        <td>
-                            German
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/gt/ge_evak_grune_haus_02_f000057.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/fs2/ge_evak_grune_haus_02_f000057.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/char/ge_evak_grune_haus_02_f000057.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/phn/ge_evak_grune_haus_02_f000057.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>la música infinita del espacio.</td>
-                        <td>
-                            Spanish
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/gt/sp_victorvillarraza_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/fs2/sp_victorvillarraza_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/char/sp_victorvillarraza_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/phn/sp_victorvillarraza_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>Yo sí. Será porque estoy muy nerviosa.</td>
-                        <td>
-                            Spanish
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/gt/sp_karensavage_angelina_60_delgado_f000105.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/fs2/sp_karensavage_angelina_60_delgado_f000105.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/char/sp_karensavage_angelina_60_delgado_f000105.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/unseen/phn/sp_karensavage_angelina_60_delgado_f000105.wav"></audio>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="row p-2"></div>
+
+        <div class="row">
+            <h3>Comparing samples with Meta-Learning TTS</h3>
         </div>
 
-        <div class="row d-flex table-responsive">
-            <table class="table table-striped table-bordered m-3">
-                <caption class="text-center fs-4">Comparing samples with Meta-Learning TTS</caption>
+        <div class="row d-flex table-responsive overflow-hidden">
+            <table class="table table-bordered m-3">
+                <!-- <caption class="text-center fs-4">Comparing samples with Meta-Learning TTS</caption> -->
                 <thead>
                     <tr class="flex-row">
                         <th class="col-3 text-center">Source Text</th>
@@ -393,7 +254,7 @@
                 <tbody>
                     <tr class="flex-row">
                         <td>Sa compagnie, celle-là même qui avait fusillé le poète Jean Prouvaire, était la première du bataillon posté à l'angle de la rue.</td>
-                        <td>
+                        <td class="text-center">
                             French
                         </td>
                         <td class="text-center">
@@ -405,7 +266,7 @@
                     </tr>
                     <tr class="flex-row">
                         <td>Sous les plis de ce voile de fumée, et grâce à sa petitesse, il put s'avancer assez loin dans la rue sans être vu.</td>
-                        <td>
+                        <td class="text-center">
                             French
                         </td>
                         <td class="text-center">
@@ -417,7 +278,7 @@
                     </tr>
                     <tr class="flex-row">
                         <td>Javert eut un froncement de tige qui lui entrouvrit un coin de la bouche, et il murmura entre ses dents: Prends garde.</td>
-                        <td>
+                        <td class="text-center">
                             French
                         </td>
                         <td class="text-center">
@@ -429,7 +290,7 @@
                     </tr>
                     <tr class="flex-row">
                         <td>daß Ihr glaubt, nur Dörtje könne Euch lieben? Geht, geht, Peregrinus, die Erfahrung wird Euch eines Bessern überzeugen.</td>
-                        <td>
+                        <td class="text-center">
                             German
                         </td>
                         <td class="text-center">
@@ -441,7 +302,7 @@
                     </tr>
                     <tr class="flex-row">
                         <td>Das Abendrot zu Seta Ein japanischer Winter am Biwasee ist nicht so kalt und nicht so schneereich wie die meisten deutschen Winter,</td>
-                        <td>
+                        <td class="text-center">
                             German
                         </td>
                         <td class="text-center">
@@ -453,7 +314,7 @@
                     </tr>
                     <tr class="flex-row">
                         <td>Vielleicht war auch sein Körper jetzt Luft, bezaubert von dem fahlen Gesicht des Dämons, der nun erscheinen sollte.</td>
-                        <td>
+                        <td class="text-center">
                             German
                         </td>
                         <td class="text-center">
@@ -465,7 +326,7 @@
                     </tr>
                     <tr class="flex-row">
                         <td>Era aquello el cadáver de una cristiana torre, mudo e inerte como todos los cadáveres.</td>
-                        <td>
+                        <td class="text-center">
                             Spanish
                         </td>
                         <td class="text-center">
@@ -477,7 +338,7 @@
                     </tr>
                     <tr class="flex-row">
                         <td>Por ese túnel ascendente tenían que introducirse los que iban a empeñar alguna cosa,.</td>
-                        <td>
+                        <td class="text-center">
                             Spanish
                         </td>
                         <td class="text-center">
@@ -489,7 +350,7 @@
                     </tr>
                     <tr class="flex-row">
                         <td>También dice que han desembarcado en Rosas mil hombres con armas que vienen de Mallorca. ¡Tres partidos!</td>
-                        <td>
+                        <td class="text-center">
                             Spanish
                         </td>
                         <td class="text-center">
@@ -503,162 +364,314 @@
             </table>
         </div>
 
-        <div class="row d-flex table-responsive">
-            <table class="table table-striped table-bordered m-3">
-                <caption class="text-center fs-4">Comparing samples for cross-lingual speech synthesis</caption>
+        <div class="row p-2"></div>
+
+        <div class="row">
+            <h3>Comparing samples for seen speakers</h3>
+        </div>
+
+        <div class="row d-flex table-responsive overflow-hidden">
+            <table class="table table-bordered m-3">
+                <!-- <caption class="text-center fs-4">Comparing samples for seen speakers</caption> -->
                 <thead>
                     <tr class="flex-row">
                         <th class="col-3 text-center">Source Text</th>
-                        <th class="col-1 text-center">Text Language</th>
-                        <th class="col-1 text-center">Speaker Language</th>
-                        <th class="col-2 text-center">Reference Voice</th>
-                        <th class="col-2 text-center">Fastspeech2</th>
-                        <th class="col-2 text-center">UMM-TTS</th>
+                        <th class="col-1 text-center">Language</th>
+                        <th class="col-2 text-center">Ground Truth</th>
+                        <th class="col-2 text-center">Fastspeech 2</th>
+                        <th class="col-2 text-center">CTE-Model</th>
+                        <th class="col-2 text-center">PTE-Model</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="flex-row">
-                        <td>Capítulo Tercero de Bailen.</td>
-                        <td>
-                            Spanish
-                        </td>
-                        <td>
-                            Hindi
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/reference/hi_m_agri_00043.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/fs2/Hindi_M_sp_tux_bailen_03_perezgaldos_f000001.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/phn/Hindi_M_sp_tux_bailen_03_perezgaldos_f000001.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>पाँचवीं पंचवर्षीय योजना में इसके कार्यक्षेत्र को और विस्तृत किया गया|</td>
-                        <td>
-                            Hindi
-                        </td>
-                        <td>
-                            French
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/reference/french_siwis_emph_book_s01_0047.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/fs2/french_siwis_hi_m_books_00150.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/char/french_siwis_hi_m_books_00150.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>पीक कर्ज वितरण कमी असलेल्या बँकांना जिल्हा प्रशासनाने कारणे दाखवा नोटीस बजवाव्यात.</td>
-                        <td>
-                            Marathi
-                        </td>
-                        <td>
-                            German
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/reference/ge_rebeccabraunertplunkett_das_letzte_marchen_001_f000014.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/fs2/German_rebecca_braunert_plunkett_mr_f_finance_02816.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/char/German_rebecca_braunert_plunkett_mr_f_finance_02816.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>Je leur ai donc probablement fait manger non pas du bœuf, mais du cheval.</td>
-                        <td>
-                            German
-                        </td>
-                        <td>
-                            French
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/reference/french_siwis_emph_book_s01_0047.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/fs2/German_eva_k_french_siwis_neut_parl_s02_0545.wav"></audio>
-                        </td>
-                        <td>
-                            <audio controls src="resources/CL/phn/German_eva_k_french_siwis_neut_parl_s02_0545.wav"></audio>
-                        </td>
-                    </tr>
-                    <tr class="flex-row">
-                        <td>The middle yard, as far as its limits would permit, was appropriated to felons and transports. The wards here were generally very crowded.</td>
-                        <td>
+                        <td>The uncle claimed her. The husband resisted.</td>
+                        <td class="text-center">
                             English
                         </td>
-                        <td>
-                            Marathi
+                        <td class="text-center">
+                            <audio controls src="resources/seen/gt/en_ljspeech_LJ011_0202.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/reference/mr_f_agri_00016.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/fs2/en_ljspeech_LJ011_0202.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/fs2/Marathi_F_en_ljspeech_LJ003_0082.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/char/en_ljspeech_LJ011_0202.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/phn/Marathi_F_en_ljspeech_LJ003_0082.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/phn/en_ljspeech_LJ011_0202.wav"></audio>
                         </td>
                     </tr>
                     <tr class="flex-row">
-                        <td>पाँचवीं पंचवर्षीय योजना में इसके कार्यक्षेत्र को और विस्तृत किया गया|</td>
                         <td>
-                            Hindi
+                            When Oswald was arrested in the Texas Theatre, he was wearing a brown sport shirt with a hole in the right sleeve at the elbow.
                         </td>
-                        <td>
+                        <td class="text-center">
                             English
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/reference/en_ljspeech_LJ001_0010.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/gt/en_ljspeech_LJ036_0054.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/fs2/English_ljspeech_hi_m_books_00150.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/fs2/en_ljspeech_LJ036_0054.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/char/English_ljspeech_hi_m_books_00150.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/char/en_ljspeech_LJ036_0054.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/phn/en_ljspeech_LJ036_0054.wav"></audio>
                         </td>
                     </tr>
                     <tr class="flex-row">
-                        <td>पीक कर्ज वितरण कमी असलेल्या बँकांना जिल्हा प्रशासनाने कारणे दाखवा नोटीस बजवाव्यात.</td>
                         <td>
-                            Marathi
+                            शिष्य सदा गुरु के पदचिह्नों पर चलता है, लेकिन उसका उद्देश्य केवल ज्ञान प्राप्त करना ही होता है।
                         </td>
+                        <td class="text-center">
+                            Hindi
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/gt/hi_m_education_02562.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/fs2/hi_m_education_02562.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/char/hi_m_education_02562.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/phn/hi_m_education_02562.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
                         <td>
+                            पाँचवीं पंचवर्षीय योजना में इसके कार्यक्षेत्र को और विस्तृत किया गया|
+                        </td>
+                        <td class="text-center">
+                            Hindi
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/gt/hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/fs2/hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/char/hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/phn/hi_m_books_00150.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>
+                            --En efecto--continuó el mentiroso--, y si aquel hombre eminente defendió con tanto calor la paz con los republicanos,
+                        </td>
+                        <td class="text-center">
                             Spanish
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/reference/sp_tux_arapiles_01_perezgaldos_f000034.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/gt/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/fs2/Spain_tux_mr_f_finance_02816.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/fs2/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/char/Spain_tux_mr_f_finance_02816.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/char/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/phn/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
                         </td>
                     </tr>
                     <tr class="flex-row">
-                        <td>Je leur ai donc probablement fait manger non pas du bœuf, mais du cheval.</td>
                         <td>
+                            Entonces me dijeron que habiendo salido otra balandra a reconocer los restos del Rayo, y los de un navío francés que corrió igual suerte, me encontraron junto a Marcial, y pudieron salvarme la vida.
+                        </td>
+                        <td class="text-center">
+                            Spanish
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/gt/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/fs2/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/char/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/phn/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>
+                            Je leur ai donc probablement fait manger non pas du bœuf, mais du cheval.
+                        </td>
+                        <td class="text-center">
                             French
                         </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/gt/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/fs2/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/char/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/phn/french_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
                         <td>
+                            n bon impôt, c’est un impôt stable, identifié, connu.
+                        </td>
+                        <td class="text-center">
+                            French
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/gt/french_siwis_neut_parl_s01_0520.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/fs2/french_siwis_neut_parl_s01_0520.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/char/french_siwis_neut_parl_s01_0520.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/seen/phn/french_siwis_neut_parl_s01_0520.wav"></audio>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row p-2"></div>
+
+        <div class="row">
+            <h3>Comparing samples for unseen speakers</h3>
+        </div>
+
+        <div class="row d-flex table-responsive overflow-hidden">
+            <table class="table table-bordered m-3">
+                <!-- <caption class="text-center fs-4">Comparing samples for unseen speakers</caption> -->
+                <thead>
+                    <tr class="flex-row">
+                        <th class="col-3 text-center">Source Text</th>
+                        <th class="col-1 text-center">Language</th>
+                        <th class="col-2 text-center">Ground Truth</th>
+                        <th class="col-2 text-center">Fastspeech 2</th>
+                        <th class="col-2 text-center">CTE-Model</th>
+                        <th class="col-2 text-center">PTE-Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="flex-row">
+                        <td>मेजर ध्यानचंद हे भारतीय हॉकीचे खेळाडू आणि संघनायक होते.</td>
+                        <td class="text-center">
+                            Marathi
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/gt/mr_f_books_00793.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/fs2/mr_f_books_00793.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/char/mr_f_books_00793.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/phn/mr_f_books_00793.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>भालचंद्र नेमाडे यांची हिंदू ही कादंबरी अपेक्षेपेक्षा फारच कमी खपली. हिंदूच्या एकूण चार कादंबऱ्यांची मालिका निघणार.</td>
+                        <td class="text-center">
+                            Marathi
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/gt/mr_f_general_00810.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/fs2/mr_f_general_00810.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/char/mr_f_general_00810.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/phn/mr_f_general_00810.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>Aber nicht zu viel, stotterte die kleine Prezel, sonst bleibt ja garnichts mehr von mir übrig, und ich muß doch meine große Prezel suchen!</td>
+                        <td class="text-center">
+                            German
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/gt/ge_evak_grune_haus_05_f000033.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/fs2/ge_evak_grune_haus_05_f000033.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/char/ge_evak_grune_haus_05_f000033.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/phn/ge_evak_grune_haus_05_f000033.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>Wenn du jetzt nicht dein goldnes Kleid anhättest, müßtest du erfrieren;</td>
+                        <td class="text-center">
+                            German
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/gt/ge_evak_grune_haus_02_f000057.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/fs2/ge_evak_grune_haus_02_f000057.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/char/ge_evak_grune_haus_02_f000057.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/phn/ge_evak_grune_haus_02_f000057.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>la música infinita del espacio.</td>
+                        <td class="text-center">
                             Spanish
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/reference/sp_karensavage_angelina_00_delgado_f000032.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/gt/sp_victorvillarraza_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/fs2/Spain_karen_savage_french_siwis_neut_parl_s02_0545.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/fs2/sp_victorvillarraza_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
                         </td>
-                        <td>
-                            <audio controls src="resources/CL/phn/Spain_karen_savage_french_siwis_neut_parl_s02_0545.wav"></audio>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/char/sp_victorvillarraza_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/phn/sp_victorvillarraza_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>Yo sí. Será porque estoy muy nerviosa.</td>
+                        <td class="text-center">
+                            Spanish
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/gt/sp_karensavage_angelina_60_delgado_f000105.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/fs2/sp_karensavage_angelina_60_delgado_f000105.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/char/sp_karensavage_angelina_60_delgado_f000105.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/unseen/phn/sp_karensavage_angelina_60_delgado_f000105.wav"></audio>
                         </td>
                     </tr>
                 </tbody>
