@@ -35,7 +35,7 @@
         </div>
         <div class="row">
             <p class="fs-5">
-                Text-to-speech (TTS) systems are modelled as mel-synthesizers followed by speech-vocoders since the era of statistical TTS that is carried forward into neural designs. These data-hungry models train end-to-end on ample paired (speech-text) samples for all voices of interest. We take an alternative approach borrowing acoustic modeling from self-supervised learning (SSL) methods and decoupling it from learning content mapping. This with two-phase training of the acoustic and content-mapper independently has significantly reduced the paired-data requirement. We present extensive results with this model, that we refer to as~\ourmodel, showing that it is competitive to or improves upon state-of-the-art under various settings. There are quality improvements in multi-speaker models and preservation of speaker traits when rendering in non-native language. We observe prominent gains in zero-shot setting with \ourmodel~generalising well to novel languages the acoustic model is not trained on. This comes with significant data efficiency enabling easier expansion to low-resource languages.
+                Text-to-speech (TTS) systems are modelled as mel-synthesizers followed by speech-vocoders since the era of statistical TTS that is carried forward into neural designs. These data-hungry models train end-to-end on ample paired (speech-text) samples for all voices of interest. We take an alternative approach borrowing acoustic modeling from self-supervised learning (SSL) methods and decoupling it from learning content mapping. This with two-phase training of the acoustic and content-mapper independently has significantly reduced the paired-data requirement. We present extensive results with this model, that we refer to as~\ourmodel, showing that it is competitive to or improves upon state-of-the-art under various settings. There are quality improvements in multi-speaker models and preservation of speaker traits when rendering in non-native language. We observe prominent gains in zero-shot setting with ParrotTTS generalising well to novel languages the acoustic model is not trained on. This comes with significant data efficiency enabling easier expansion to low-resource languages.
             </p>
         </div>
 
@@ -48,7 +48,7 @@
         <div class="row">
             <figure class="figure text-center">
                 <img src="resources/tts_tth.png" alt="..." class="figure-img">
-                <figcaption class="figure-caption text-center">Insert caption if required</figcaption>
+                <figcaption class="figure-caption text-center">(a) Traditional TTS and (b) ParrotTTS</figcaption>
             </figure>
         </div>
     </div>
@@ -746,6 +746,324 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="row p-2"></div>
+
+        <div class="row">
+            <h3>Demo of Single Speaker TTS</h3>
+        </div>
+
+        <div class="row d-flex table-responsive overflow-auto">
+            <table class="table table-bordered m-3">
+                <!-- <caption class="text-center fs-4">Comparing samples for unseen speakers</caption> -->
+                <thead>
+                    <tr class="flex-row">
+                        <th class="col-3 text-center">Source Text</th>
+                        <th class="col-1 text-center">SS-Tacotron2 (Baseline)</th>
+                        <th class="col-2 text-center">SS-FastSpeech2 (Baseline)</th>
+                        <th class="col-2 text-center">SS-FastSpeech2-SupASR (Baseline)</th>
+                        <th class="col-2 text-center">SS-Tacotron2-UnsupASR (Baseline)</th>
+                        <th class="col-2 text-center">SS-WavThruVec (Baseline)</th>
+                        <th class="col-2 text-center">ParrotTTS: NAR-TTE (Ours-Main)</th>
+                        <th class="col-2 text-center">ParrotTTS: NAR-TTE (Ours-Half-Transcripts)</th>
+                        <th class="col-2 text-center">ParrotTTS: AR-TTE (Ours)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="flex-row">
+                        <td>Under the conditions referred to in the previous chapter.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_tacotron_LJ002-0002.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_fs2_LJ002-0002.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ASR_LJ002-0002.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_unasr_LJ002-0002.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_w2v_LJ002-0002.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_nar_LJ002-0002.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_halfnar_LJ002-0002.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ar_LJ002-0002.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>Modern printers understand this, but it is only practiced in the very best establishments.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_tacotron_LJ001-0136.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_fs2_LJ001-0136.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ASR_LJ001-0136.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_unasr_LJ001-0136.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_w2v_LJ001-0136.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_nar_LJ001-0136.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_halfnar_LJ001-0136.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ar_LJ001-0136.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>And therefore approximately one point six seconds after the president was shot in the head.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_tacotron_LJ049-0048.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_fs2_LJ049-0048.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ASR_LJ049-0048.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_unasr_LJ049-0048.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_w2v_LJ049-0048.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_nar_LJ049-0048.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_halfnar_LJ049-0048.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ar_LJ049-0048.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>A formal and thorough description of the responsibilities of the advance agent is now in preparation by the service.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_tacotron_LJ050-0022.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_fs2_LJ050-0022.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ASR_LJ050-0022.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_unasr_LJ050-0022.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_w2v_LJ050-0022.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_nar_LJ050-0022.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_halfnar_LJ050-0022.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ar_LJ050-0022.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>And investigative capabilities of the agencies now operating in this field but will continue.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_tacotron_LJ050-0123.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_fs2_LJ050-0123.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ASR_LJ050-0123.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_unasr_LJ050-0123.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_w2v_LJ050-0123.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_nar_LJ050-0123.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_halfnar_LJ050-0123.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ar_LJ050-0123.wav"></audio>
+                        </td>
+                    </tr>
+                    <tr class="flex-row">
+                        <td>The department hopes to design a practical system which will fully meet the needs of the protective research section of the secret service.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_tacotron_LJ050-0158.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_fs2_LJ050-0158.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ASR_LJ050-0158.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_unasr_LJ050-0158.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_w2v_LJ050-0158.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_nar_LJ050-0158.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_halfnar_LJ050-0158.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/SS_ar_LJ050-0158.wav"></audio>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row p-2"></div>
+
+        <div class="row">
+            <h3>Demo of Multi-Speaker TTS</h3>
+        </div>
+
+        <div class="row d-flex table-responsive overflow-auto">
+            <table class="table table-bordered m-3">
+                <!-- <caption class="text-center fs-4">Comparing samples for unseen speakers</caption> -->
+                <thead>
+                    <tr class="flex-row">
+                        <th class="col-3 text-center">Source Text</th>
+                        <th class="col-1 text-center">GT-Mel+Vocoder</th>
+                        <th class="col-2 text-center">MS-FastSpeech2 (Baseline)</th>
+                        <th class="col-2 text-center">MS-FastSpeech2-SupASR (Baseline)</th>
+                        <th class="col-2 text-center">VC-FastSpeech2 (Baseline)</th>
+                        <th class="col-2 text-center">MS-WavThruVec (Baseline)</th>
+                        <th class="col-2 text-center">ParrotTTS: NAR-TTE (Ours-Main)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="flex-row">
+                        <td>Until recently she worked as a recruitment consultant in London.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_orig_p233_067_mic2.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_fs2_p233_067.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_ASR_p233_067.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_vc_p233_067.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_w2v_p233_01.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_tth_p233_067.wav"></audio>
+                        </td>  
+                    </tr>
+                    <tr class="flex-row">
+                        <td>No one in downing street can speak the language of the unions.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_orig_p246_138_mic2_gt.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_fs2_p246_138.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_ASR_p246_138.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_vc_p246_138.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_w2v_p246_05.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_tth_p246_138.wav"></audio>
+                        </td>  
+                    </tr>
+                    <tr class="flex-row">
+                        <td>The key player in this matter is now the prime minister.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_orig_p263_363_mic2_gt.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_fs2_p263_363.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_ASR_p263_363.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_vc_p263_363.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_w2v_p263_04.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_tth_p263_363.wav"></audio>
+                        </td>  
+                    </tr>
+                    <tr class="flex-row">
+                        <td>I tried to be cautious but its hard in that role.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_orig_p283_407_mic2_gt.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_fs2_p283_407.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_ASR_p283_407.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_vc_p283_407.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_w2v_p283_03.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_tth_p283_407.wav"></audio>
+                        </td>  
+                    </tr>
+                    <tr class="flex-row">
+                        <td>The advisors had some discussions but no conclusion was reached.</td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_orig_p286_339_mic2_gt.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_fs2_p286_339.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_ASR_p286_339.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_vc_p286_339.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_w2v_p286_02.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/parrottts/MS_tth_p286_339.wav"></audio>
+                        </td>  
+                    </tr>
+                </tbody>
+            </table>
+        
     </div>
 
 </body>
