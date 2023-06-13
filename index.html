@@ -21,7 +21,7 @@
     <div class="d-block p-3">
         <div class="row p-5">
             <h1 class="display-3 text-lg-center">
-                UMM-TTS: Unified Multilingual Multispeaker Text to Speech Synthesis in Low Resource Setting
+                ParrotTTS: Text-to-Speech synthesis by exploiting self-supervised representations
             </h1>
         </div>
         <div class="row p-2">
@@ -35,7 +35,7 @@
         </div>
         <div class="row">
             <p class="fs-5">
-                We present UMM-TTS, a unified multilingual, multispeaker text-to-speech (TTS) synthesis model that can produce high-quality speech. Benefiting from a modularized training paradigm exploiting self-supervised speech representations. UMM-TTS  adapts to a new language with minimal supervised data and generalizes to languages not seen while training the self-supervised backbone. Moreover, without training on any bilingual or parallel examples, UMM-TTS can transfer voices across languages while preserving the speaker-specific characteristics, e.g., synthesizing fluent Hindi speech using a French speaker’s voice and accent. We present extensive results on six languages in terms of speech naturalness and speaker similarity in parallel and cross-lingual synthesis. The proposed model outperforms the state-of-the-art Fastspeech2 backbone, using only a small fraction of supervised training data.
+                Text-to-speech (TTS) systems are modelled as mel-synthesizers followed by speech-vocoders since the era of statistical TTS that is carried forward into neural designs. These data-hungry models train end-to-end on ample paired (speech-text) samples for all voices of interest. We take an alternative approach borrowing acoustic modeling from self-supervised learning (SSL) methods and decoupling it from learning content mapping. This with two-phase training of the acoustic and content-mapper independently has significantly reduced the paired-data requirement. We present extensive results with this model, that we refer to as~\ourmodel, showing that it is competitive to or improves upon state-of-the-art under various settings. There are quality improvements in multi-speaker models and preservation of speaker traits when rendering in non-native language. We observe prominent gains in zero-shot setting with \ourmodel~generalising well to novel languages the acoustic model is not trained on. This comes with significant data efficiency enabling easier expansion to low-resource languages.
             </p>
         </div>
 
@@ -47,7 +47,7 @@
         <div class="row p-2"></div>
         <div class="row">
             <figure class="figure text-center">
-                <img src="resources/UMMTTS.png" alt="..." class="figure-img">
+                <img src="resources/tts_tth.png" alt="..." class="figure-img">
                 <figcaption class="figure-caption text-center">Insert caption if required</figcaption>
             </figure>
         </div>
@@ -82,7 +82,8 @@
                         <th class="col-1 text-center">Speaker Language</th>
                         <th class="col-2 text-center">Reference Voice</th>
                         <th class="col-2 text-center">Fastspeech2</th>
-                        <th class="col-2 text-center">UMM-TTS</th>
+                        <th class="col-2 text-center">Meta-TTS</th>
+                        <th class="col-2 text-center">ParrotTTS</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -99,6 +100,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/CL/fs2/Hindi_M_sp_tux_bailen_03_perezgaldos_f000001.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/es_tux_bailen_03_perezgaldos_f000001.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/CL/phn/Hindi_M_sp_tux_bailen_03_perezgaldos_f000001.wav"></audio>
@@ -119,6 +123,9 @@
                             <audio controls src="resources/CL/fs2/french_siwis_hi_m_books_00150.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/CL/char/french_siwis_hi_m_books_00150.wav"></audio>
                         </td>
                     </tr>
@@ -135,6 +142,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/CL/fs2/German_rebecca_braunert_plunkett_mr_f_finance_02816.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/mr_f_finance_02816.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/CL/char/German_rebecca_braunert_plunkett_mr_f_finance_02816.wav"></audio>
@@ -155,6 +165,9 @@
                             <audio controls src="resources/CL/fs2/German_eva_k_french_siwis_neut_parl_s02_0545.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/fr_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/CL/phn/German_eva_k_french_siwis_neut_parl_s02_0545.wav"></audio>
                         </td>
                     </tr>
@@ -171,6 +184,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/CL/fs2/Marathi_F_en_ljspeech_LJ003_0082.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/en_ljspeech_LJ003_0082.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/CL/phn/Marathi_F_en_ljspeech_LJ003_0082.wav"></audio>
@@ -191,6 +207,9 @@
                             <audio controls src="resources/CL/fs2/English_ljspeech_hi_m_books_00150.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/CL/char/English_ljspeech_hi_m_books_00150.wav"></audio>
                         </td>
                     </tr>
@@ -207,6 +226,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/CL/fs2/Spain_tux_mr_f_finance_02816.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/mr_f_finance_02816.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/CL/char/Spain_tux_mr_f_finance_02816.wav"></audio>
@@ -227,6 +249,9 @@
                             <audio controls src="resources/CL/fs2/Spain_karen_savage_french_siwis_neut_parl_s02_0545.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/fr_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/CL/phn/Spain_karen_savage_french_siwis_neut_parl_s02_0545.wav"></audio>
                         </td>
                     </tr>
@@ -236,19 +261,19 @@
 
         <div class="row p-2"></div>
 
-        <div class="row">
+        <!-- <div class="row">
             <h3>Comparing samples with Meta-Learning TTS</h3>
         </div>
 
         <div class="row d-flex table-responsive overflow-hidden">
             <table class="table table-bordered m-3">
-                <!-- <caption class="text-center fs-4">Comparing samples with Meta-Learning TTS</caption> -->
+                
                 <thead>
                     <tr class="flex-row">
                         <th class="col-3 text-center">Source Text</th>
                         <th class="col-1 text-center">Language</th>
                         <th class="col-4 text-center">Meta-Model</th>
-                        <th class="col-4 text-center">UMM-TTS</th>
+                        <th class="col-4 text-center">ParrotTTS</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -362,7 +387,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> -->
 
         <div class="row p-2"></div>
 
@@ -379,6 +404,7 @@
                         <th class="col-1 text-center">Language</th>
                         <th class="col-2 text-center">Ground Truth</th>
                         <th class="col-2 text-center">Fastspeech 2</th>
+                        <th class="col-2 text-center">Meta-TTS</th>
                         <th class="col-2 text-center">CTE-Model</th>
                         <th class="col-2 text-center">PTE-Model</th>
                     </tr>
@@ -394,6 +420,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/seen/fs2/en_ljspeech_LJ011_0202.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/en_ljspeech_LJ011_0202.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/seen/char/en_ljspeech_LJ011_0202.wav"></audio>
@@ -416,6 +445,9 @@
                             <audio controls src="resources/seen/fs2/en_ljspeech_LJ036_0054.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/en_ljspeech_LJ036_0054.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/seen/char/en_ljspeech_LJ036_0054.wav"></audio>
                         </td>
                         <td class="text-center">
@@ -434,6 +466,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/seen/fs2/hi_m_education_02562.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/hi_m_education_02562.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/seen/char/hi_m_education_02562.wav"></audio>
@@ -456,6 +491,9 @@
                             <audio controls src="resources/seen/fs2/hi_m_books_00150.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/hi_m_books_00150.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/seen/char/hi_m_books_00150.wav"></audio>
                         </td>
                         <td class="text-center">
@@ -474,6 +512,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/seen/fs2/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/es_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/seen/char/sp_tux_trafalgar_07_perezgaldos_f000100.wav"></audio>
@@ -496,6 +537,9 @@
                             <audio controls src="resources/seen/fs2/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/es_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/seen/char/sp_tux_trafalgar_16_perezgaldos_f000018.wav"></audio>
                         </td>
                         <td class="text-center">
@@ -516,6 +560,9 @@
                             <audio controls src="resources/seen/fs2/french_siwis_neut_parl_s02_0545.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/fr_siwis_neut_parl_s02_0545.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/seen/char/french_siwis_neut_parl_s02_0545.wav"></audio>
                         </td>
                         <td class="text-center">
@@ -534,6 +581,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/seen/fs2/french_siwis_neut_parl_s01_0520.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/fr_siwis_neut_parl_s01_0520.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/seen/char/french_siwis_neut_parl_s01_0520.wav"></audio>
@@ -561,6 +611,7 @@
                         <th class="col-1 text-center">Language</th>
                         <th class="col-2 text-center">Ground Truth</th>
                         <th class="col-2 text-center">Fastspeech 2</th>
+                        <th class="col-2 text-center">Meta-TTS</th>
                         <th class="col-2 text-center">CTE-Model</th>
                         <th class="col-2 text-center">PTE-Model</th>
                     </tr>
@@ -576,6 +627,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/unseen/fs2/mr_f_books_00793.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/mr_f_books_00793.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/unseen/char/mr_f_books_00793.wav"></audio>
@@ -596,6 +650,9 @@
                             <audio controls src="resources/unseen/fs2/mr_f_general_00810.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/mr_f_general_00810.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/unseen/char/mr_f_general_00810.wav"></audio>
                         </td>
                         <td class="text-center">
@@ -612,6 +669,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/unseen/fs2/ge_evak_grune_haus_05_f000033.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/de_eva_grune_haus_05_f000033.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/unseen/char/ge_evak_grune_haus_05_f000033.wav"></audio>
@@ -632,6 +692,9 @@
                             <audio controls src="resources/unseen/fs2/ge_evak_grune_haus_02_f000057.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/de_eva_grune_haus_02_f000057.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/unseen/char/ge_evak_grune_haus_02_f000057.wav"></audio>
                         </td>
                         <td class="text-center">
@@ -650,6 +713,9 @@
                             <audio controls src="resources/unseen/fs2/sp_victorvillarraza_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
                         </td>
                         <td class="text-center">
+                            <audio controls src="resources/meta_trained/es_victor_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
+                        </td>
+                        <td class="text-center">
                             <audio controls src="resources/unseen/char/sp_victorvillarraza_cuentosclasicosprimera_06_poe_f000180.wav"></audio>
                         </td>
                         <td class="text-center">
@@ -666,6 +732,9 @@
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/unseen/fs2/sp_karensavage_angelina_60_delgado_f000105.wav"></audio>
+                        </td>
+                        <td class="text-center">
+                            <audio controls src="resources/meta_trained/es_karen_angelina_60_delgado_f000105.wav"></audio>
                         </td>
                         <td class="text-center">
                             <audio controls src="resources/unseen/char/sp_karensavage_angelina_60_delgado_f000105.wav"></audio>
