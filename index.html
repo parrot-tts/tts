@@ -21,7 +21,7 @@
     <div class="d-block p-3">
         <div class="row p-5">
             <h1 class="display-3 text-lg-center">
-                ParrotTTS: Text-to-Speech synthesis by exploiting self-supervised representations
+                ParrotTTS: Text-to-speech synthesis exploiting disentangled self-supervised representations
             </h1>
         </div>
         <div class="row p-2">
@@ -35,7 +35,7 @@
         </div>
         <div class="row">
             <p class="fs-5">
-                Text-to-speech (TTS) systems are modelled as mel-synthesizers followed by speech-vocoders since the era of statistical TTS that is carried forward into neural designs. These data-hungry models train end-to-end on ample paired (speech-text) samples for all voices of interest. We take an alternative approach borrowing acoustic modeling from self-supervised learning (SSL) methods and decoupling it from learning content mapping. This with two-phase training of the acoustic and content-mapper independently has significantly reduced the paired-data requirement. We present extensive results with this model, that we refer to as~\ourmodel, showing that it is competitive to or improves upon state-of-the-art under various settings. There are quality improvements in multi-speaker models and preservation of speaker traits when rendering in non-native language. We observe prominent gains in zero-shot setting with ParrotTTS generalising well to novel languages the acoustic model is not trained on. This comes with significant data efficiency enabling easier expansion to low-resource languages.
+                We present ParrotTTS, a modularized text-to-speech synthesis model leveraging disentangled self-supervised speech representations. It can train a multi-speaker variant effectively using transcripts from a single speaker. ParrotTTS adapts to a new language in low resource setup and generalizes to languages not seen while training the self-supervised backbone. Moreover, without training on bilingual or parallel examples, ParrotTTS can transfer voices across languages while preserving the speaker-specific characteristics, e.g., synthesizing fluent Hindi speech using a French speaker’s voice and accent. We present extensive results in monolingual and multi-lingual scenarios. ParrotTTS outperforms state-of-the-art multi-lingual TTS models using only a fraction of paired data as latter. Speech samples from ParrotTTS can be found at \textcolor{blue}{\url{https://parrot-tts.github.io/tts/}}
             </p>
         </div>
 
